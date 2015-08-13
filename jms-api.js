@@ -1,8 +1,7 @@
 var path = require('path');
+var Swaggerize = require('swaggerize-hapi');
 
 module.exports = function (server) {
-
-	var Swaggerize = require('swaggerize-hapi');
 
 	server.register({
 			register: Swaggerize,

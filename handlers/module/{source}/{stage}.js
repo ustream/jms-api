@@ -14,9 +14,6 @@ module.exports = {
 	get: function (req, reply) {
 
 		var params = req.params;
-		var query = req.query;
-
-		console.log(params, query);
 
 		req.server.methods.storage(
 			'getAllVersions',
