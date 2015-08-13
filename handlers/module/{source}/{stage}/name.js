@@ -1,5 +1,6 @@
 'use strict';
-var _      = require('lodash');
+
+var _ = require('lodash');
 
 /**
  * Operations on /module/{source}/{stage}/name/{module}
@@ -34,13 +35,11 @@ module.exports = {
                     params.stage,
                     result,
                     function (err, result) {
-
-
                         if (err) return reply().code(500);
 
                         if (!_.compact(result).length) return reply().code(404);
 
-                        reply(result.map(JSON.parse)).header('Access-Control-Allow-Origin', '*');
+                        reply(result.map(JSON.parse));
                     }
                 );
             }

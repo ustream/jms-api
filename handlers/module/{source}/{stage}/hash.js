@@ -1,6 +1,6 @@
 'use strict';
 
-var _      = require('lodash');
+var _ = require('lodash');
 
 /**
  * Operations on /module/{source}/{stage}/hash
@@ -24,7 +24,7 @@ module.exports = {
             params.stage,
             [query.module],
             function (err, result) {
-                reply(result.map(JSON.parse)).header('Access-Control-Allow-Origin', '*');
+                reply(result.map(JSON.parse));
             }
         );
 
