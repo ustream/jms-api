@@ -1,0 +1,36 @@
+{
+  "name": "jms-api",
+  "main": "./jms-api.js",
+  "version": "1.0.1",
+  "description": "JMS api",
+  "author": "_Nec <nec@ustream.tv>",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "latest",
+    "swaggerize-hapi": "^1.0.0-rc.3"
+  },
+  "devDependencies": {
+    "grunt-release": "latest",
+    "grunt": "latest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git-repos.ustream-adm.in:jms/jms-api.git"
+  },
+  "publishConfig": {
+    "registry": "http://sjc-npm-cache.ustream.tv:4873",
+    "username": "ustream"
+  },
+  "engines": {
+    "node": ">= 0.10"
+  },
+  "scripts": {},
+  "keywords": [
+    "jms",
+    "api",
+    "modules",
+    "moduleserver",
+    "hapijs",
+    "swagger"
+  ]
+}
