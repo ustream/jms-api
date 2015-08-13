@@ -166,6 +166,50 @@
                     }
                 }
             }
+        },
+        "/module/{source}/{stage}/versions": {
+            "get": {
+                "summary": "Get module names from the given source and stage",
+                "parameters": [
+                    {
+                        "name": "source",
+                        "in": "path",
+                        "description": "Source id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "stage",
+                        "in": "path",
+                        "description": "Version stage",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "Module"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Module collection",
+                        "schema": {
+                            "$ref": "#/definitions/ModuleVersionCollection"
+                        }
+                    },
+                    "404": {
+                        "description": "Not found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
         }
     },
     "definitions": {
@@ -189,7 +233,7 @@
                 },
                 "originalModule": {
                     "description": "Original module name, relative to source basepath",
-                    "$ref": "#/definitions/ModuleName"
+                    "type": "string"
                 },
                 "originalSource": {
                     "description": "Original module source code",
@@ -209,6 +253,21 @@
                     "items": {
                         "type": "string"
                     }
+                }
+            }
+        },
+        "ModuleCollection": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Module"
+            }
+        },
+        "ModuleVersionCollection": {
+            "type": "object",
+            "additionalProperties": {
+                "type": "array",
+                "items": {
+                    "type": "string"
                 }
             }
         },
