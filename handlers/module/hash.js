@@ -22,7 +22,7 @@ module.exports = {
             'getModules',
             params.source,
             params.stage,
-            [query.module],
+            [params.module],
             function (err, result) {
                 reply(result.map(JSON.parse));
             }

@@ -115,28 +115,14 @@
                 }
             }
         },
-        "/module/{source}/{stage}/hash": {
+        "/module/hash/{module}": {
             "get": {
-                "summary": "Get module information of the module version according to its hash",
+                "summary": "Get module information of a module version according to its hash",
                 "description": "Returns information of a module, that is handled by JMS\n",
                 "parameters": [
                     {
-                        "name": "source",
-                        "in": "path",
-                        "description": "Source id",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "name": "stage",
-                        "in": "path",
-                        "description": "Version stage",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
                         "name": "module",
-                        "in": "query",
+                        "in": "path",
                         "description": "Module hash",
                         "required": true,
                         "type": "string"
@@ -169,7 +155,7 @@
         },
         "/module/{source}/{stage}/versions": {
             "get": {
-                "summary": "Get module names from the given source and stage",
+                "summary": "Get all stored module version hashes from the given source and stage",
                 "parameters": [
                     {
                         "name": "source",
