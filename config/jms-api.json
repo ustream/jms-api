@@ -14,7 +14,7 @@
         "application/json"
     ],
     "paths": {
-        "/module/{source}/{stage}": {
+        "/module/list/{source}/{stage}": {
             "get": {
                 "summary": "Get module names from the given source and stage",
                 "parameters": [
@@ -62,7 +62,7 @@
                 }
             }
         },
-        "/module/{source}/{stage}/name": {
+        "/module/name/{source}/{stage}": {
             "get": {
                 "summary": "Get module information of the latest available module version",
                 "description": "Returns information of a module, that is handled by JMS\n",
@@ -153,7 +153,7 @@
                 }
             }
         },
-        "/module/{source}/{stage}/versions": {
+        "/module/versions/{source}/{stage}": {
             "get": {
                 "summary": "Get all stored module version hashes from the given source and stage",
                 "parameters": [
