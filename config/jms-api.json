@@ -153,7 +153,44 @@
                 }
             }
         },
-        "/module/versions/{source}/{stage}": {
+        "/module/versions/{stage}": {
+            "get": {
+                "summary": "Get all stored module sources, and their version hashes from the given stage",
+                "parameters": [
+                    {
+                        "name": "stage",
+                        "in": "path",
+                        "description": "Version stage",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "Module"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Module collection",
+                        "schema": {
+                            "$ref": "#/definitions/ModuleVersionCollection"
+                        }
+                    },
+                    "404": {
+                        "description": "Not found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        }
+        "/module/versions/{stage}/{source}": {
             "get": {
                 "summary": "Get all stored module version hashes from the given source and stage",
                 "parameters": [

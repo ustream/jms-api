@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Operations on /module/{source}/{stage}/versions
+ * Operations on /module/versions/{stage}
  */
 module.exports = {
 
@@ -16,8 +16,7 @@ module.exports = {
 		var params = req.params;
 
 		req.server.methods.storage(
-			'getAllVersions',
-			params.source,
+			'getSourcesFromStage',
 			params.stage,
 			function (err, result) {
 				reply(result);
