@@ -189,7 +189,7 @@
                     }
                 }
             }
-        }
+        },
         "/module/versions/{stage}/{source}": {
             "get": {
                 "summary": "Get all stored module version hashes from the given source and stage",
