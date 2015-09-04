@@ -20,9 +20,8 @@ module.exports = {
 			params.source,
 			params.stage,
 			function (err, result) {
-				if (err) {
-					throw err;
-				}
+				if (err) return reply('Internal error').code(500);
+
 
 				if (!result) {
 					return reply('Not found').code(404);

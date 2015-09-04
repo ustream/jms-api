@@ -25,7 +25,7 @@ module.exports = {
             [query.module],
             function (err, result) {
 
-                if (err) return reply().code(500);
+                if (err) return reply('Internal error').code(500);
 
                 if (!_.compact(result).length) return reply('Not found').code(404);
 

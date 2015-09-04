@@ -1,24 +1,26 @@
 'use strict';
 
+var _ = require('lodash');
+
 /**
- * Operations on /module/versions/{stage}/{source}
+ * Operations on /module/{source}/{stage}/hash
  */
 module.exports = {
 
     /**
-     * Get module names from the given source and stage
+     * Returns information of a module, that is handled by JMS
 
-     * parameters: source, stage
+     * parameters: source, stage, hash
      * produces:
      */
     get: function (req, reply) {
 
         var params = req.params;
+        var query = req.query;
 
         req.server.methods.storage(
-            'getAllVersions',
-            params.source,
-            params.stage,
+            'getModules',
+            [params.module],
             function (err, result) {
                 if (err) return reply('Internal error').code(500);
 
@@ -26,9 +28,10 @@ module.exports = {
                     return reply('Not found').code(404);
                 }
 
-                reply(result);
+                reply(result.map(JSON.parse));
             }
         );
+
     }
 
 };
