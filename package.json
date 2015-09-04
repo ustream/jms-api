@@ -1,7 +1,7 @@
 {
   "name": "jms-api",
   "main": "./jms-api.js",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "API handlers for the JMS server",
   "author": "_Nec <nec@ustream.tv>",
   "license": "MIT",
