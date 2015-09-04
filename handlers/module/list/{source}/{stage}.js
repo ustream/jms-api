@@ -20,6 +20,14 @@ module.exports = {
 			params.source,
 			params.stage,
 			function (err, result) {
+				if (err) {
+					throw err;
+				}
+
+				if (!result) {
+					return reply('Not found').code(404);
+				}
+
 				reply(Object.keys(result));
 			}
 		);
